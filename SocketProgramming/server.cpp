@@ -43,19 +43,19 @@ int main()
 
 	listening = socket(AF_INET,SOCK_STREAM,0);
 	if(listening == -1)
-		{
-			cerr<<"Cant create socket";
-			return -1;
-		}
+	{
+		cerr<<"Cant create socket";
+		return -1;
+	}
 
 	//Binding socket to an IP/port
 
 	sockaddr_in hint;                               //handling internet address
 	hint.sin_family = AF_INET;
 	hint.sin_port = htons(54000);                   //htons(host to networkshort)is used for maintaining the arrangement of the bytes according to their endianness
-    inet_pton(AF_INET,"0.0.0.0",&hint.sin_addr);  
+	inet_pton(AF_INET,"0.0.0.0",&hint.sin_addr);  
 
-    bind(listening, (sockaddr*)&hint, sizeof(hint));// converts IP addressess from text to binary form
+	bind(listening, (sockaddr*)&hint, sizeof(hint));// converts IP addressess from text to binary form
 
 	//Mark the socket for listening
 
@@ -81,7 +81,7 @@ int main()
 	memset(svc,0,NI_MAXSERV);
 
 	
-    int result =getnameinfo((sockaddr*)&client,sizeof(client),host,	NI_MAXHOST,svc,NI_MAXSERV,0);
+	int result =getnameinfo((sockaddr*)&client,sizeof(client),host,	NI_MAXHOST,svc,NI_MAXSERV,0);
 
 	if (result)
 	{
@@ -106,9 +106,6 @@ int main()
 
 	close(listening);
 	
-
-
 	return 0;
-
 
 }
