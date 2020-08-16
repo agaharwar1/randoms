@@ -2,15 +2,16 @@
 #define FUNCTIONS_H 
   
 class server {
-    public:
+	
+	public:
       
-        int serverutils(int listening);
+		int serverutils(int listening);
        
-        int clientutils();
+		int clientutils();
 
-        void sendsocket(int socketToSend);
+		void sendsocket(int socketToSend);
        
-        void recvsocket(int socketToRecv);
+		void recvsocket(int socketToRecv);
 
     };
 
