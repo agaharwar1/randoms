@@ -210,10 +210,6 @@ void moves(string name,string name1,string name2,char move)
             name =name1;
         }
         
-
-        
-
-       
     }
     while(true);
 
